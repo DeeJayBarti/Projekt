@@ -3,10 +3,12 @@ import os
 from tkinter import *
 from tkinter import ttk
 
+def quit(zdarzenie):
+	global okno
+	okno.quit()	
 #-------------------------------- Funkcja zamknij aplikację
 def zamknij(zdarzenie):
 	okno.quit()
-	okno.destroy()
 #-------------------------------- Funkcja wybrania POMPEK
 def pompki(zdarzenie):
 
@@ -105,44 +107,351 @@ def wybierz_ile(zdarzenie):
 
 	# 1 - 19
 	przycisk1_19 = Button(okno, text = "1 - 19 powtórzeń", width=16, height=1)
-	przycisk1_19.bind("<Button-1>")
+	przycisk1_19.bind("<Button-1>", pow1_19)
 	przycisk1_19.pack(padx = 2, pady = 2)
 
 	# 20 - 39
 	przycisk20_39 = Button(okno, text = "20 - 39 powtórzeń", width=16, height=1)
-	przycisk20_39.bind("<Button-1>")
+	przycisk20_39.bind("<Button-1>", pow20_39)
 	przycisk20_39.pack(padx = 2, pady = 2)
 
 	# 40 - 59
 	przycisk40_59 = Button(okno, text = "40 - 59 powtórzeń", width=16, height=1)
-	przycisk40_59.bind("<Button-1>")
+	przycisk40_59.bind("<Button-1>", pow40_59)
 	przycisk40_59.pack(padx = 2, pady = 2)
 
 	# 60 - 79
 	przycisk60_79 = Button(okno, text = "60 - 79 powtórzeń", width=16, height=1)
-	przycisk60_79.bind("<Button-1>")
+	przycisk60_79.bind("<Button-1>", pow60_79)
 	przycisk60_79.pack(padx = 2, pady = 2)
 
 	# 80 - 99
 	przycisk80_99 = Button(okno, text = "80 - 99 powtórzeń", width=16, height=1)
-	przycisk80_99.bind("<Button-1>")
+	przycisk80_99.bind("<Button-1>", pow80_99)
 	przycisk80_99.pack(padx = 2, pady = 2)
 
 	# 100 - 119
 	przycisk100_119 = Button(okno, text = "100 - 119 powtórzeń", width=16, height=1)
-	przycisk100_119.bind("<Button-1>")
+	przycisk100_119.bind("<Button-1>", pow100_119)
 	przycisk100_119.pack(padx = 2, pady = 2)
 
 	# 120 - 139
 	przycisk120_139 = Button(okno, text = "120 - 139 powtórzeń", width=16, height=1)
-	przycisk120_139.bind("<Button-1>")
+	przycisk120_139.bind("<Button-1>", pow120_139)
 	przycisk120_139.pack(padx = 2, pady = 2)
 
 	# 140 +
 	przycisk140 = Button(okno, text = "Ponad 150 powtórzeń", width=16, height=1)
-	przycisk140.bind("<Button-1>")
+	przycisk140.bind("<Button-1>", pow140)
 	przycisk140.pack(padx = 2, pady = 2)
 
+	okno.mainloop()
+
+#------------------------------------------------------------
+#-------------------------------- Poszczególne treningi-----
+#-----------------------------------------------------------
+
+def pow1_19(zdarzenie):
+
+	okno = Tk()
+	okno.title("4ForFit")
+	okno.geometry("240x300")
+	etykieta = Label(okno, text = "Oto Twój następny trening !", padx = 30, pady = 10)
+	etykieta.pack(expand=NO)
+	etykieta = Label(okno, text = "I seria:     10 powtórzeń\n\
+\n\
+II seria:     13 powtórzeń\n\
+\n\
+III seria:    11 powtórzeń\n\
+\n\
+IV seria:     15 powtórzeń\n\
+\n\
+Przerwa pomiędzy seriami: 60 sekund\n\
+\n\
+Pamiętaj aby dokładnie wykonywać\n\
+każde z powtórzeń !", padx = 5, pady = 5)
+	etykieta.pack(expand=NO)
+
+	bottomFrame = Frame(okno)
+	bottomFrame.pack()
+	
+	poddajsie = Button(bottomFrame, text = "Poddaje się", width = 8, height = 2)
+	poddajsie.bind("<Button-1>", quit)
+	poddajsie.pack(side = LEFT, padx = 2, pady = 2)
+
+	skonczoneb = Button(bottomFrame, text = "Skończone !", width = 8, height = 2)
+	skonczoneb.bind("<Button-1>", skonczone)
+	skonczoneb.pack(side = RIGHT, padx = 2, pady = 2)
+
+	okno.mainloop()
+
+def pow20_39(zdarzenie):
+
+	okno = Tk()
+	okno.title("4ForFit")
+	okno.geometry("240x300")
+	etykieta = Label(okno, text = "Oto Twój następny trening !", padx = 30, pady = 10)
+	etykieta.pack(expand=NO)
+	etykieta = Label(okno, text = "I seria:     18 powtórzeń\n\
+\n\
+II seria:     22 powtórzenia\n\
+\n\
+III seria:    25 powtórzeń\n\
+\n\
+IV seria:     17 powtórzeń\n\
+\n\
+V seria:     20 powtórzeń\n\
+\n\
+VI seria:     22 powtórzenia\n\
+\n\
+Przerwa pomiędzy seriami: 60 sekund", padx = 5, pady = 5)
+	etykieta.pack(expand=NO)
+
+	bottomFrame = Frame(okno)
+	bottomFrame.pack()
+	
+	poddajsie = Button(bottomFrame, text = "Poddaje się", width = 8, height = 2)
+	poddajsie.bind("<Button-1>", quit)
+	poddajsie.pack(side = LEFT, padx = 2, pady = 2)
+
+	skonczoneb = Button(bottomFrame, text = "Skończone !", width = 8, height = 2)
+	skonczoneb.bind("<Button-1>", skonczone)
+	skonczoneb.pack(side = RIGHT, padx = 2, pady = 2)
+
+	okno.mainloop()
+
+def pow40_59(zdarzenie):
+
+	okno = Tk()
+	okno.title("4ForFit")
+	okno.geometry("240x300")
+	etykieta = Label(okno, text = "Oto Twój następny trening !", padx = 30, pady = 10)
+	etykieta.pack(expand=NO)
+	etykieta = Label(okno, text = "I seria:     25 powtórzeń\n\
+\n\
+II seria:     29 powtórzeń\n\
+\n\
+III seria:    24 powtórzenia\n\
+\n\
+IV seria:     30 powtórzeń\n\
+\n\
+V seria:     31 powtórzeń\n\
+\n\
+VI seria:     27 powtórzeń\n\
+\n\
+Przerwa pomiędzy seriami: 60 sekund", padx = 5, pady = 5)
+	etykieta.pack(expand=NO)
+
+	bottomFrame = Frame(okno)
+	bottomFrame.pack()
+	
+	poddajsie = Button(bottomFrame, text = "Poddaje się", width = 8, height = 2)
+	poddajsie.bind("<Button-1>", quit)
+	poddajsie.pack(side = LEFT, padx = 2, pady = 2)
+
+	skonczoneb = Button(bottomFrame, text = "Skończone !", width = 8, height = 2)
+	skonczoneb.bind("<Button-1>", skonczone)
+	skonczoneb.pack(side = RIGHT, padx = 2, pady = 2)
+
+	okno.mainloop()
+
+def pow60_79(zdarzenie):
+
+	okno = Tk()
+	okno.title("4ForFit")
+	okno.geometry("240x300")
+	etykieta = Label(okno, text = "Oto Twój następny trening !", padx = 30, pady = 10)
+	etykieta.pack(expand=NO)
+	etykieta = Label(okno, text = "I seria:     30 powtórzeń\n\
+\n\
+II seria:     35 powtórzeń\n\
+\n\
+III seria:    29 powtórzeń\n\
+\n\
+IV seria:     30 powtórzeń\n\
+\n\
+V seria:     34 powtórzenia\n\
+\n\
+VI seria:     36 powtórzeń\n\
+\n\
+Przerwa pomiędzy seriami: 60 sekund", padx = 5, pady = 5)
+	etykieta.pack(expand=NO)
+
+	bottomFrame = Frame(okno)
+	bottomFrame.pack()
+	
+	poddajsie = Button(bottomFrame, text = "Poddaje się", width = 8, height = 2)
+	poddajsie.bind("<Button-1>", quit)
+	poddajsie.pack(side = LEFT, padx = 2, pady = 2)
+
+	skonczoneb = Button(bottomFrame, text = "Skończone !", width = 8, height = 2)
+	skonczoneb.bind("<Button-1>", skonczone)
+	skonczoneb.pack(side = RIGHT, padx = 2, pady = 2)
+
+	okno.mainloop()
+
+def pow80_99(zdarzenie):
+
+	okno = Tk()
+	okno.title("4ForFit")
+	okno.geometry("240x300")
+	etykieta = Label(okno, text = "Oto Twój następny trening !", padx = 30, pady = 10)
+	etykieta.pack(expand=NO)
+	etykieta = Label(okno, text = "I seria:     40 powtórzeń\n\
+\n\
+II seria:     45 powtórzeń\n\
+\n\
+III seria:    42 powtórzenia\n\
+\n\
+IV seria:     47 powtórzeń\n\
+\n\
+V seria:     50 powtórzeń\n\
+\n\
+VI seria:     52 powtórzenia\n\
+\n\
+Przerwa pomiędzy seriami: 60 sekund", padx = 5, pady = 5)
+	etykieta.pack(expand=NO)
+
+	bottomFrame = Frame(okno)
+	bottomFrame.pack()
+	
+	poddajsie = Button(bottomFrame, text = "Poddaje się", width = 8, height = 2)
+	poddajsie.bind("<Button-1>", quit)
+	poddajsie.pack(side = LEFT, padx = 2, pady = 2)
+
+	skonczoneb = Button(bottomFrame, text = "Skończone !", width = 8, height = 2)
+	skonczoneb.bind("<Button-1>", skonczone)
+	skonczoneb.pack(side = RIGHT, padx = 2, pady = 2)
+
+	okno.mainloop()
+
+def pow100_119(zdarzenie):
+
+	okno = Tk()
+	okno.title("4ForFit")
+	okno.geometry("240x300")
+	etykieta = Label(okno, text = "Oto Twój następny trening !", padx = 30, pady = 10)
+	etykieta.pack(expand=NO)
+	etykieta = Label(okno, text = "I seria:     50 powtórzeń\n\
+\n\
+II seria:     56 powtórzeń\n\
+\n\
+III seria:    62 powtórzenia\n\
+\n\
+IV seria:     57 powtórzeń\n\
+\n\
+V seria:     55 powtórzeń\n\
+\n\
+VI seria:     63 powtórzenia\n\
+\n\
+Przerwa pomiędzy seriami: 60 sekund", padx = 5, pady = 5)
+	etykieta.pack(expand=NO)
+
+	bottomFrame = Frame(okno)
+	bottomFrame.pack()
+	
+	poddajsie = Button(bottomFrame, text = "Poddaje się", width = 8, height = 2)
+	poddajsie.bind("<Button-1>", quit)
+	poddajsie.pack(side = LEFT, padx = 2, pady = 2)
+
+	skonczoneb = Button(bottomFrame, text = "Skończone !", width = 8, height = 2)
+	skonczoneb.bind("<Button-1>", skonczone)
+	skonczoneb.pack(side = RIGHT, padx = 2, pady = 2)
+
+	okno.mainloop()
+
+def pow120_139(zdarzenie):
+
+	okno = Tk()
+	okno.title("4ForFit")
+	okno.geometry("240x300")
+	etykieta = Label(okno, text = "Oto Twój następny trening !", padx = 30, pady = 10)
+	etykieta.pack(expand=NO)
+	etykieta = Label(okno, text = "I seria:     65 powtórzeń\n\
+\n\
+II seria:     70 powtórzeń\n\
+\n\
+III seria:    73 powtórzenia\n\
+\n\
+IV seria:     68 powtórzeń\n\
+\n\
+V seria:     65 powtórzeń\n\
+\n\
+VI seria:     75 powtórzeń\n\
+\n\
+Przerwa pomiędzy seriami: 60 sekund", padx = 5, pady = 5)
+	etykieta.pack(expand=NO)
+
+	bottomFrame = Frame(okno)
+	bottomFrame.pack()
+	
+	poddajsie = Button(bottomFrame, text = "Poddaje się", width = 8, height = 2)
+	poddajsie.bind("<Button-1>", quit)
+	poddajsie.pack(side = LEFT, padx = 2, pady = 2)
+
+	skonczoneb = Button(bottomFrame, text = "Skończone !", width = 8, height = 2)
+	skonczoneb.bind("<Button-1>", skonczone)
+	skonczoneb.pack(side = RIGHT, padx = 2, pady = 2)
+
+	okno.mainloop()
+
+def pow140(zdarzenie):
+
+	okno = Tk()
+	okno.title("4ForFit")
+	okno.geometry("240x300")
+	etykieta = Label(okno, text = "Oto Twój następny trening !", padx = 30, pady = 10)
+	etykieta.pack(expand=NO)
+	etykieta = Label(okno, text = "I seria:     70 powtórzeń\n\
+\n\
+II seria:     76 powtórzeń\n\
+\n\
+III seria:    80 powtórzeń\n\
+\n\
+IV seria:     77 powtórzeń\n\
+\n\
+V seria:     85 powtórzeń\n\
+\n\
+VI seria:     90 powtórzeń\n\
+\n\
+Przerwa pomiędzy seriami: 60 sekund", padx = 5, pady = 5)
+	etykieta.pack(expand=NO)
+
+	bottomFrame = Frame(okno)
+	bottomFrame.pack()
+	
+	poddajsie = Button(bottomFrame, text = "Poddaje się", width = 8, height = 2)
+	poddajsie.bind("<Button-1>", quit)
+	poddajsie.pack(side = LEFT, padx = 2, pady = 2)
+
+	skonczoneb = Button(bottomFrame, text = "Skończone !", width = 8, height = 2)
+	skonczoneb.bind("<Button-1>", skonczone)
+	skonczoneb.pack(side = RIGHT, padx = 2, pady = 2)
+
+	okno.mainloop()
+#---------------------------------------------- Zakonczenie treningu
+def skonczone(zdarzenie):
+	
+	okno = Tk()
+	okno.title("4ForFit")
+	okno.geometry("240x300")
+	etykieta = Label(okno, text = "Gratulacje !\n\
+\n\
+Udało Ci się zakończyć trening !\n\
+\n\
+\n\
+Teraz pora zregenerować organizm.\n\
+\n\
+Pamiętaj o jutrzejszym treningu !", padx = 30, pady = 10)
+	etykieta.pack(expand=NO)
+	
+	bottomFrame = Frame(okno)
+	bottomFrame.pack()
+	
+	wyjdz = Button(bottomFrame, text = "Wyjdź", width = 8, 		height = 3)
+	wyjdz.bind("<Button-1>", quit)
+	wyjdz.pack(side = BOTTOM, padx = 10, pady = 10)
+	
 	okno.mainloop()
 #-------------------------------- Funkcja wybrania PODCIĄGNIĘĆ
 def podciagniecia(zdarzenie):
@@ -208,6 +517,5 @@ przycisk2.pack(side = RIGHT, padx = 10, pady = 10)
 przycisk3.pack(side = LEFT, padx = 10, pady = 10)
 przycisk4.pack(side = RIGHT, padx = 10,  pady = 10)
 przycisk.pack(side = BOTTOM, padx = 10, pady = 10)
-
 
 okno.mainloop()
